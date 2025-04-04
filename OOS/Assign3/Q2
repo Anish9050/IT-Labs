@@ -1,0 +1,58 @@
+import java.util.*;
+
+class FrequencyCounter {
+    public static <T> void findFrequency(T[] array) {
+        Map<T, Integer> frequencyMap = new HashMap<>();
+
+        for (T element : array) {
+            frequencyMap.put(element, frequencyMap.getOrDefault(element, 0) + 1);
+        }
+
+        System.out.println("Element Frequencies:");
+        for (Map.Entry<T, Integer> entry : frequencyMap.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Choose array type: 1. Integer  2. String  3. Character");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Enter the number of elements: ");
+        int n = scanner.nextInt();
+        scanner.nextLine();
+
+        if (choice == 1) {
+            Integer[] intArray = new Integer[n];
+            System.out.println("Enter " + n + " integers:");
+            for (int i = 0; i < n; i++) {
+                intArray[i] = scanner.nextInt();
+            }
+            findFrequency(intArray);
+
+        } else if (choice == 2) {
+            String[] strArray = new String[n];
+            System.out.println("Enter " + n + " strings:");
+            for (int i = 0; i < n; i++) {
+                strArray[i] = scanner.nextLine();
+            }
+            findFrequency(strArray);
+
+        } else if (choice == 3) {
+            Character[] charArray = new Character[n];
+            System.out.println("Enter " + n + " characters:");
+            for (int i = 0; i < n; i++) {
+                charArray[i] = scanner.nextLine().charAt(0);
+            }
+            findFrequency(charArray);
+
+        } else {
+            System.out.println("Invalid choice! Please restart the program.");
+        }
+
+        scanner.close();
+    }
+}
