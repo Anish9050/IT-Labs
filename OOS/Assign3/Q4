@@ -1,0 +1,68 @@
+import java.lang.reflect.*;
+
+class SampleClass {
+    private String privateField = "This is a private field";
+
+    public SampleClass() {}
+
+    public SampleClass(String msg) {
+        System.out.println("Constructor called with message: " + msg);
+    }
+
+    public void publicMethod() {
+        System.out.println("Public method called.");
+    }
+
+    private void privateMethod() {
+        System.out.println("Private method called.");
+    }
+}
+
+public class ReflectionDemo {
+    public static void main(String[] args) {
+        try {
+            // 1. Get Class object
+            SampleClass obj = new SampleClass();
+            Class<?> clazz = obj.getClass();
+            System.out.println("Class Name: " + clazz.getName());
+
+            // 2. Get all public methods
+            Method[] methods = clazz.getMethods();
+            System.out.println("\nPublic Methods:");
+            for (Method method : methods) {
+                System.out.println(method.getName());
+            }
+
+            // 3. Get all constructors
+            Constructor<?>[] constructors = clazz.getConstructors();
+            System.out.println("\nConstructors:");
+            for (Constructor<?> constructor : constructors) {
+                System.out.println(constructor);
+            }
+
+            // 4. Get a specific method (declared, public or private)
+            Method publicMethod = clazz.getDeclaredMethod("publicMethod");
+            System.out.println("\nRetrieved Method: " + publicMethod.getName());
+
+            // 5. Invoke a public method using reflection
+            publicMethod.invoke(obj);
+
+            // 6. Access a private method
+            Method privateMethod = clazz.getDeclaredMethod("privateMethod");
+            privateMethod.setAccessible(true);
+            privateMethod.invoke(obj);
+
+            // 7. Access a private field
+            Field privateField = clazz.getDeclaredField("privateField");
+            privateField.setAccessible(true);
+            System.out.println("\nPrivate Field Value: " + privateField.get(obj));
+
+            // 8. Modify a private field
+            privateField.set(obj, "Modified private field value");
+            System.out.println("Updated Private Field Value: " + privateField.get(obj));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
