@@ -1,1 +1,26 @@
+import java.util.*; 
+class Student { 
+private String name; 
+private int mark1, mark2, mark3; 
+public void setDetails(String name, int mark1, int mark2, int mark3) { this.name = name; 
+this.mark1 = mark1; 
+this.mark2 = mark2; 
+this.mark3 = mark3; 
+} 
+public int computeTotal() { 
+return mark1 + mark2 + mark3; 
+} 
+public double computeAverage() {
+return computeTotal() / 3.0; 
+} 
+public void displayDetails() { 
+int total = computeTotal(); 
+double average = computeAverage(); 
+System.out.println("Name: " + name); 
+System.out.println("Total Marks: " + total); System.out.println("Average Marks: " + average); } 
+public static void main(String[] args) { 
+Student student = new Student(); 
+student.setDetails("Ankita Dhara", 85, 90, 78); student.displayDetails(); 
+} 
+} 
 
