@@ -1,0 +1,81 @@
+import java.util.*; 
+class Book { 
+private String author; 
+private String title; 
+private String publisher; 
+private double cost; 
+private int stock; 
+public Book(String author, String title, String publisher, double cost, int stock) { this.author = author; 
+this.title = title; 
+this.publisher = publisher; 
+this.cost = cost; 
+this.stock = stock; 
+} 
+public String getAuthor() { 
+return author; 
+} 
+public String getTitle() { 
+return title; 
+} 
+public String getPublisher() { 
+return publisher; 
+} 
+public double getCost() { 
+return cost; 
+}
+public int getStock() { 
+return stock; 
+} 
+public void setStock(int stock) { 
+this.stock = stock; 
+} 
+public boolean isAvailable(String searchTitle, String searchAuthor) { 
+return this.title.equalsIgnoreCase(searchTitle) && 
+this.author.equalsIgnoreCase(searchAuthor); 
+} 
+public boolean sellCopies(int numberOfCopies) { 
+if (numberOfCopies <= stock) { 
+stock -= numberOfCopies; 
+return true; 
+} else { 
+return false; 
+} 
+} 
+} 
+class BookShop { 
+public static void main(String[] args) { 
+Book[] inventory = { 
+new Book("J.K. Rowling", "Harry Potter and the Sorcerer's Stone", "Bloomsbury", 20.99, 10), 
+new Book("J.R.R. Tolkien", "The Hobbit", "HarperCollins", 15.50, 5), 
+new Book("George Orwell", "1984", "Penguin", 12.80, 8) 
+}; 
+java.util.Scanner scanner = new java.util.Scanner(System.in); 
+System.out.print("Enter book title: "); 
+String searchTitle = scanner.nextLine(); 
+System.out.print("Enter book author: "); 
+String searchAuthor = scanner.nextLine(); 
+boolean bookFound = false; 
+for (Book book : inventory) { 
+if (book.isAvailable(searchTitle, searchAuthor)) { 
+bookFound = true; 
+System.out.println("Book found!"); 
+System.out.println("Title: " + book.getTitle()); 
+System.out.println("Author: " + book.getAuthor());
+System.out.println("Publisher: " + book.getPublisher()); 
+System.out.println("Cost: $" + book.getCost()); 
+System.out.println("Stock: " + book.getStock()); 
+System.out.print("Enter number of copies required: "); 
+int copies = scanner.nextInt(); 
+if (book.sellCopies(copies)) { 
+System.out.println("Total cost: $" + (copies * book.getCost())); } else { 
+System.out.println("Required copies not in stock."); 
+} 
+break; 
+} 
+} 
+if (!bookFound) { 
+System.out.println("Book not available."); 
+} 
+scanner.close(); 
+} 
+} 
