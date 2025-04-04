@@ -1,0 +1,97 @@
+.import java.util.ArrayList; 
+abstract class Publication {
+protected int noOfPages; 
+protected double price; 
+protected String publisherName; 
+public Publication(int noOfPages, double price, String publisherName) { this.noOfPages = noOfPages; 
+this.price = price; 
+this.publisherName = publisherName; 
+} 
+public int getNoOfPages() { 
+return noOfPages; 
+} 
+public void setNoOfPages(int noOfPages) { 
+this.noOfPages = noOfPages; 
+} 
+public double getPrice() { 
+return price; 
+} 
+public void setPrice(double price) { 
+this.price = price; 
+} 
+public String getPublisherName() { 
+return publisherName; 
+} 
+public void setPublisherName(String publisherName) { 
+this.publisherName = publisherName; 
+} 
+public abstract void displayDetails(); 
+} 
+class Book extends Publication { 
+private String authorName; 
+public Book(int noOfPages, double price, String publisherName, String authorName) { super(noOfPages, price, publisherName); 
+this.authorName = authorName; 
+}
+public String getAuthorName() { 
+return authorName; 
+} 
+public void setAuthorName(String authorName) { 
+this.authorName = authorName; 
+}  
+public void displayDetails() { 
+System.out.println("Book:"); 
+System.out.println(" Author: " + authorName); 
+System.out.println(" Publisher: " + publisherName); 
+System.out.println(" Pages: " + noOfPages); 
+System.out.println(" Price: $" + price); 
+} 
+} 
+class Journal extends Publication { 
+private String frequency; 
+public Journal(int noOfPages, double price, String publisherName, String frequency) { super(noOfPages, price, publisherName); 
+this.frequency = frequency; 
+} 
+public String getFrequency() { 
+return frequency; 
+} 
+public void setFrequency(String frequency) { 
+this.frequency = frequency; 
+} 
+public void displayDetails() { 
+System.out.println("Journal:"); 
+System.out.println(" Frequency: " + frequency); 
+System.out.println(" Publisher: " + publisherName); 
+System.out.println(" Pages: " + noOfPages); 
+System.out.println(" Price: $" + price); 
+} 
+} 
+class Library {
+private ArrayList<Publication> publications; 
+public Library() { 
+publications = new ArrayList<>(); 
+} 
+public void addPublication(Publication publication) { 
+publications.add(publication); 
+} 
+public void displayPublications() { 
+for (Publication publication : publications) { 
+publication.displayDetails(); 
+System.out.println(); 
+} 
+} 
+} 
+class Main { 
+public static void main(String[] args) { 
+Library library = new Library(); 
+Book book1 = new Book(300, 15.99, "Penguin", "J.K. Rowling"); 
+Book book2 = new Book(450, 20.99, "HarperCollins", "George R.R. Martin"); Book book3 = new Book(200, 10.99, "Simon & Schuster", "Agatha Christie"); 
+Journal journal1 = new Journal(100, 5.99, "Nature Publishing Group", "Monthly"); Journal journal2 = new Journal(150, 7.99, "Springer", "Quarterly"); 
+library.addPublication(book1); 
+library.addPublication(book2); 
+library.addPublication(book3); 
+library.addPublication(journal1); 
+library.addPublication(journal2); 
+System.out.println("Library Publications:"); 
+library.displayPublications(); 
+} 
+}
