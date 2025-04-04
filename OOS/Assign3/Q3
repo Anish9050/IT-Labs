@@ -1,0 +1,62 @@
+import java.util.*;
+
+public class DuplicateFinder {
+    public static <T> void findDuplicates(T[] array) {
+        Set<T> uniqueElements = new HashSet<>();
+        Set<T> duplicates = new HashSet<>();
+
+        for (T element : array) {
+            if (!uniqueElements.add(element)) {
+                duplicates.add(element);
+            }
+        }
+
+        if (duplicates.isEmpty()) {
+            System.out.println("No duplicate elements found.");
+        } else {
+            System.out.println("Duplicate elements: " + duplicates);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Choose array type: 1. Integer  2. String  3. Character");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Enter the number of elements: ");
+        int n = scanner.nextInt();
+        scanner.nextLine();
+
+        if (choice == 1) {
+            Integer[] intArray = new Integer[n];
+            System.out.println("Enter " + n + " integers:");
+            for (int i = 0; i < n; i++) {
+                intArray[i] = scanner.nextInt();
+            }
+            findDuplicates(intArray);
+
+        } else if (choice == 2) {
+            String[] strArray = new String[n];
+            System.out.println("Enter " + n + " strings:");
+            for (int i = 0; i < n; i++) {
+                strArray[i] = scanner.nextLine();
+            }
+            findDuplicates(strArray);
+
+        } else if (choice == 3) {
+            Character[] charArray = new Character[n];
+            System.out.println("Enter " + n + " characters:");
+            for (int i = 0; i < n; i++) {
+                charArray[i] = scanner.nextLine().charAt(0);
+            }
+            findDuplicates(charArray);
+
+        } else {
+            System.out.println("Invalid choice! Please restart the program.");
+        }
+
+        scanner.close();
+    }
+}
