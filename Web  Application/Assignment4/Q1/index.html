@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student List Manager</title>
+    <style>
+        body{
+            font-family: Arial;
+            text-align: center;
+            background:#f4f4f4;
+        }
+
+        .container{
+            width:400px;
+            margin:auto;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        input{
+            padding:8px;
+            width:70%;
+        }
+
+        button{
+            padding:8px 12px;
+            margin:5px;
+            cursor:pointer;
+        }
+
+        li{
+            list-style:none;
+            padding:10px;
+            margin:5px;
+            background:#e3f2fd;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .remove{
+            background:red;
+            color:white;
+            border:none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Student List Manager</h2>
+
+    <input type="text" id="studentName" placeholder="Enter Student Name">
+    <button onclick="addStudent()">Add Student</button>
+
+    <h3>Total Students: <span id="count">0</span></h3>
+
+    <ul id="studentList"></ul>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
