@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Button Click Message</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        button {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <button onclick="showMessage()">Click Me</button>
+
+    <p id="message"></p>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").innerHTML = "Button was clicked!";
+        }
+    </script>
+
+</body>
+
+</html>
