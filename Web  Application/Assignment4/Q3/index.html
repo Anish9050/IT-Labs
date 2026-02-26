@@ -1,0 +1,70 @@
+x<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator with History</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            text-align:center;
+            background:#f2f2f2;
+        }
+
+        .container{
+            width:350px;
+            margin:auto;
+            margin-top:50px;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        input, select, button{
+            padding:8px;
+            margin:5px;
+            width:80%;
+        }
+
+        ul{
+            list-style:none;
+            padding:0;
+        }
+
+        li{
+            background:#e3f2fd;
+            margin:5px;
+            padding:8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Simple Calculator</h2>
+
+<input type="number" id="num1" placeholder="Enter Number 1">
+<input type="number" id="num2" placeholder="Enter Number 2">
+
+<select id="operator" placeholder="choose your operator">
+    <option value="+">+</option>
+    <option value="-">−</option>
+    <option value="*">×</option>
+    <option value="/">÷</option>
+</select>
+
+<button onclick="calculate()">Calculate</button>
+
+<h3 id="result">Result: </h3>
+
+<h3>Last 5 Calculations</h3>
+<ul id="history"></ul>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
