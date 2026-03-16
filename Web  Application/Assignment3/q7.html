@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Promotion Page</title>
+
+    <style>
+        /* Global styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+        }
+
+        /* Header */
+        header {
+            background-color: #111;
+            padding: 25px;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #222;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #00e5ff;
+            transform: scale(1.1);
+        }
+
+        /* Content Section */
+        .content {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .content img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .content img:hover {
+            transform: scale(1.05);
+        }
+
+        .details h2 {
+            margin-top: 0;
+            font-size: 32px;
+            color: #00e5ff;
+        }
+
+        .details p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .price {
+            font-size: 24px;
+            margin: 20px 0;
+            color: #ffd54f;
+            font-weight: bold;
+        }
+
+        ul.specs {
+            list-style: square;
+            padding-left: 20px;
+            font-size: 17px;
+        }
+
+        /* Button */
+        .buy-btn {
+            background-color: #00e5ff;
+            color: #000;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .buy-btn:hover {
+            background-color: #ffd54f;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 15px;
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>UltraBook Pro Laptop</h1>
+        <p>Power. Performance. Portability.</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Specifications</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content Section -->
+    <section class="content" id="promoSection">
+        <img src="https://www.google.com/imgres?imgurl=https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/dell-pro/pc14255/media-gallery/gray/hd-fhd/notebook-dell-pro-pc14255-hd-fhd-gy-gallery-1.psd?fmt%3Dpng-alpha%26pscan%3Dauto%26scl%3D1%26hei%3D320%26wid%3D423%26qlt%3D100,1%26resMode%3Dsharp2%26size%3D423,320%26chrss%3Dfull&imgrefurl=https://www.dell.com/en-in/shop/laptop-notebook-computers/dell-pro-14-laptop/spd/dell-pro-pc14255-laptop&h=320&w=423&tbnid=fIxzktGCbdaySM&source=sa.im&tbnh=320&tbnw=423&usg=AI4_-kTkAIfk3kdU88tQneCGYJGZQdmG8Q&vet=1&docid=ZHzsZRdQBUibAM"
+            alt="Laptop Image">
+
+        <div class="details">
+            <h2>UltraBook Pro 14</h2>
+            <p>
+                The UltraBook Pro is designed for professionals and students who need
+                speed, reliability, and style. Its lightweight design and powerful
+                hardware make it perfect for work, study, and entertainment.
+            </p>
+
+            <ul class="specs">
+                <li>14-inch Full HD Display</li>
+                <li>Intel Core i7 (12th Gen)</li>
+                <li>16 GB RAM</li>
+                <li>512 GB SSD Storage</li>
+                <li>Windows 11</li>
+                <li>Up to 10 hours battery life</li>
+            </ul>
+
+            <div class="price">Price Range: ₹65,000 – ₹85,000</div>
+
+            <button class="buy-btn" onclick="highlightOffer()">Buy Now</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Laptop Store | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function highlightOffer() {
+            const section = document.getElementById("promoSection");
+            section.style.backgroundColor = "rgba(255, 255, 255, 0.25)";
+            section.style.transition = "background-color 0.5s ease";
+            alert("Limited-time offer applied!");
+        }
+    </script>
+
+</body>
+
+</html>

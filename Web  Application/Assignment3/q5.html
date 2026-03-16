@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form Validation</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .alert {
+            background-color: #ffcccb;
+            color: #d8000c;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var password = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("mobile").value;
+            var address = document.getElementById("address").value;
+
+            var alertDiv = document.getElementById("alert");
+            alertDiv.style.display = 'none';
+            alertDiv.innerHTML = "";
+
+            var fnamePattern = /^[A-Za-z]{6,}$/;
+            if (!fnamePattern.test(fname)) {
+                alertDiv.style.display = 'block';
+                alertDiv.innerHTML = "First Name must contain only alphabets and at least 6 characters.";
+                return false;
+            }
+
+            if (lname.trim() === "") {
+                alertDiv.style.display = 'block';
+                alertDiv.innerHTML = "Last Name cannot be empty.";
+                return false;
+            }
+
+            if (password.length < 6) {
+                alertDiv.style.display = 'block';
+                alertDiv.innerHTML = "Password must be at least 6 characters long.";
+                return false;
+            }
+
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                alertDiv.style.display = 'block';
+                alertDiv.innerHTML = "Invalid Email ID format. Example: name@domain.com";
+                return false;
+            }
+
+            var mobilePattern = /^[0-9]{10}$/;
+            if (!mobilePattern.test(mobile)) {
+                alertDiv.style.display = 'block';
+                alertDiv.innerHTML = "Mobile Number must contain exactly 10 digits.";
+                return false;
+            }
+
+            if (address.trim() === "") {
+                alertDiv.style.display = 'block';
+                alertDiv.innerHTML = "Address cannot be empty.";
+                return false;
+            }
+
+            alertDiv.style.display = 'block';
+            alertDiv.className = 'alert success';
+            alertDiv.innerHTML = "Registration Successful!";
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="alert" id="alert"></div>
+
+    <form onsubmit="return validateForm()">
+        <h2>Registration Form</h2>
+
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="fname">
+
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lname">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+
+        <label for="email">Email ID:</label>
+        <input type="text" id="email" name="email">
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="text" id="mobile" name="mobile">
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address"></textarea>
+
+        <input type="submit" value="Register">
+    </form>
+
+</body>
+
+</html>
