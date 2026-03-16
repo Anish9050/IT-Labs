@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Two Numbers</title>
+</head>
+
+<body>
+    <input type="number" id="num1" placeholder="Enter first number" />
+    <input type="number" id="num2" placeholder="Enter second number" />
+
+    <br /><br />
+
+    <button onclick="addNumbers()">Add</button>
+
+    <p id="result"></p>
+
+    <script>
+        function addNumbers() {
+            var a = document.getElementById("num1").value;
+            var b = document.getElementById("num2").value;
+            var sum = Number(a) + Number(b);
+
+            document.getElementById("result").innerHTML = "Result: " + sum;
+        }
+    </script>
+</body>
+
+</html>
