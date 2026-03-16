@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Q8 - Input Validation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #66a6ff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(102, 166, 255, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 12px;
+            border: none;
+            border-radius: 6px;
+            background-color: #66a6ff;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #4e8de6;
+            transform: translateY(-2px);
+        }
+
+        #warningMessage {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .error {
+            color: #e74c3c;
+        }
+
+        .success {
+            color: #2ecc71;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Input Validation</h2>
+
+        <input type="text" id="textBox" placeholder="Enter something" />
+        <button onclick="validateInput()">Validate Input</button>
+
+        <p id="warningMessage"></p>
+    </div>
+
+    <script>
+        function validateInput() {
+            var input = document.getElementById("textBox").value;
+            var message = document.getElementById("warningMessage");
+
+            if (input.trim() === "") {
+                message.innerText = "⚠ Please fill out this field.";
+                message.className = "error";
+            } else {
+                message.innerText = "✔ Valid!";
+                message.className = "success";
+            }
+        }
+    </script>
+</body>
+
+</html>

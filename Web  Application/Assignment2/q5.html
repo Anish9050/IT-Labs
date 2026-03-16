@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Q5</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 350px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        button {
+            background: #4facfe;
+            border: none;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #007bff;
+            transform: scale(1.05);
+        }
+
+        #dateTime {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #222;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Date & Time Display</h2>
+        <button onclick="displayDateTime()">Display Date and Time</button>
+        <p id="dateTime"></p>
+    </div>
+
+    <script>
+        function displayDateTime() {
+            var currentDate = new Date();
+            var day = currentDate.toLocaleString('en-us', { weekday: 'long' });
+            var date = currentDate.toLocaleDateString();
+            var time = currentDate.toLocaleTimeString();
+
+            document.getElementById("dateTime").innerText =
+                "Today is " + day + ", " + date + " and the time is " + time;
+        }
+    </script>
+
+</body>
+</html>

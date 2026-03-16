@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Q9 - Find Largest Number</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #43cea2, #185a9d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+            width: 350px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #43cea2;
+            outline: none;
+            box-shadow: 0 0 6px rgba(67, 206, 162, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #43cea2;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background: #2ebf91;
+            transform: translateY(-2px);
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #185a9d;
+            background: #f0f8ff;
+            padding: 10px;
+            border-radius: 8px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Find the Largest Number</h2>
+
+        <input type="number" id="num1" placeholder="Enter Number 1">
+        <input type="number" id="num2" placeholder="Enter Number 2">
+        <input type="number" id="num3" placeholder="Enter Number 3">
+
+        <button onclick="getResult()">Find Largest</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function getResult() {
+            const n1 = parseFloat(document.getElementById('num1').value) || 0;
+            const n2 = parseFloat(document.getElementById('num2').value) || 0;
+            const n3 = parseFloat(document.getElementById('num3').value) || 0;
+
+            const largest = Math.max(n1, n2, n3);
+            const resultBox = document.getElementById('result');
+
+            resultBox.innerHTML = "⭐ Largest Number: " + largest;
+            resultBox.style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

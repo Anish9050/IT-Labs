@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Q7 - Toggle Paragraph</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            width: 500px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            background-color: #ff6f61;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e85a4f;
+            transform: translateY(-2px);
+        }
+
+        #para {
+            margin-top: 20px;
+            text-align: justify;
+            line-height: 1.6;
+            color: #555;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
+        }
+
+        #para.show {
+            max-height: 500px;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Toggle Paragraph</h2>
+        <button onclick="toggleView()">Show / Hide Paragraph</button>
+
+        <p id="para">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro consequuntur officiis neque magnam dolorum exercitationem ea soluta dicta ipsa odio temporibus velit perspiciatis iusto, nesciunt animi ab magni consectetur tempora. Iusto debitis nesciunt
+            dolorum voluptate. Minima, dicta! Fugit sequi similique esse ipsam maiores non illo natus facilis ducimus saepe asperiores quam perspiciatis labore atque nemo, accusantium error rem, veniam repellat.
+        </p>
+    </div>
+
+    <script>
+        const para = document.getElementById("para");
+
+        function toggleView() {
+            para.classList.toggle("show");
+        }
+    </script>
+</body>
+
+</html>

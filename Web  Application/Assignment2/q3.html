@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Press Counter</title>
+
+    <style>
+        /* Global body styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        /* Container for the button and counter */
+        .counter-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Button styles */
+        button {
+            padding: 15px 30px;
+            background-color: #4caf50;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Paragraph displaying the button press count */
+        p {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .counter {
+            color: #1e88e5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Button Press Counter</h1>
+
+    <div class="counter-container">
+        <button onclick="increaseCount()">Press it!</button>
+        <p id="para">Button press count: <span class="counter">0</span></p>
+    </div>
+
+    <script>
+        let count = 0;
+
+        function increaseCount() {
+            count++;
+            const str = `Button press count: <span class="counter">${count}</span>`;
+            document.getElementById("para").innerHTML = str;
+        }
+    </script>
+
+</body>
+
+</html>
