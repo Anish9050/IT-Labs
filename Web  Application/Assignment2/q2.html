@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square and Cube Calculator</title>
+
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e3f2fd;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #1e88e5;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 350px;
+            text-align: center;
+        }
+
+        input[type="number"] {
+            padding: 12px;
+            font-size: 18px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #1e88e5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1976d2;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .result {
+            font-size: 20px;
+            font-weight: bold;
+            color: #388e3c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Square and Cube Calculator</h1>
+
+    <div class="container">
+        <input type="number" id="num1" placeholder="Enter a number here" />
+        <button onclick="check()">Calculate Square and Cube</button>
+        <p id="para"></p>
+    </div>
+
+    <script>
+        function check() {
+            const num1 = document.getElementById("num1").value;
+            if (!num1) {
+                document.getElementById("para").innerHTML = "Please enter a valid number!";
+                return;
+            }
+            let square = num1 * num1;
+            let cube = square * num1;
+            document.getElementById(
+                "para"
+            ).innerHTML = `<span class="result">Square: ${square}</span><br><span class="result">Cube: ${cube}</span>`;
+        }
+    </script>
+
+</body>
+
+</html>
