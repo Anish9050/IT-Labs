@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Display Date and Time</title>
+</head>
+
+<body>
+    <button onclick="showDateTime()">Show Date and Time</button>
+
+    <p id="datetime"></p>
+
+    <script>
+        function showDateTime() {
+            var now = new Date();
+            const hour = now.getHours();
+            const minute = now.getMinutes();
+            const second = now.getSeconds();
+
+            const Day = now.getDate();
+            const Month = now.getMonth() + 1;
+            const Year = now.getFullYear();
+
+            const str1 = `${Day}/${Month}/${Year}`;
+            const str2 = `${hour}:${minute}:${second}`;
+            document.getElementById("datetime").innerHTML = str1 + str2;
+        }
+    </script>
+</body>
+
+</html>
