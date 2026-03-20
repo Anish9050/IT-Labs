@@ -1,0 +1,7 @@
+[
+  {"id":1,"name":"Anish","course":"IT","marks":85},
+  {"id":2,"name":"Rahul","course":"IT","marks":92},
+  {"id":3,"name":"Kaustav","course":"IT","marks":79},
+  {"id":4,"name":"Amit","course":"ME","marks":74},
+  {"id":5,"name":"Raktim","course":"MBBS","marks":88}
+]
