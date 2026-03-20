@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Session</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            text-align:center;
+            background:#f2f2f2;
+        }
+
+        .container{
+            width:350px;
+            margin:auto;
+            margin-top:80px;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        input, button{
+            padding:10px;
+            margin:10px;
+            width:80%;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>User Login</h2>
+
+<div id="loginSection">
+    <input type="text" id="username"
+           placeholder="Enter Username">
+    <button onclick="login()">Login</button>
+</div>
+
+<div id="welcomeSection" style="display:none;">
+    <h3 id="welcomeMsg"></h3>
+    <button onclick="logout()">Logout</button>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
