@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Theme Toggle</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align:center;
+    transition:0.3s;
+}
+
+/* Light Theme */
+.light{
+    background:white;
+    color:black;
+}
+
+/* Dark Theme */
+.dark{
+    background:#121212;
+    color:white;
+}
+
+button{
+    padding:10px 20px;
+    margin-top:50px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body class="light">
+
+<h2>Dark / Light Theme Toggle</h2>
+
+<button onclick="toggleTheme()">Toggle Theme</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>
