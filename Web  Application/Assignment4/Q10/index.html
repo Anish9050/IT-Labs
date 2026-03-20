@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Fetch Student Data</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align:center;
+}
+
+table{
+    margin:auto;
+    border-collapse:collapse;
+    width:70%;
+}
+
+th, td{
+    border:1px solid black;
+    padding:8px;
+}
+
+input{
+    padding:8px;
+    margin:15px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Student Records</h2>
+
+<input type="text"
+       id="search"
+       placeholder="Search student..."
+       onkeyup="searchStudent()">
+
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Course</th>
+<th>Marks</th>
+</tr>
+</thead>
+
+<tbody id="tableBody"></tbody>
+</table>
+
+<script src="script.js"></script>
+
+</body>
+</html>
