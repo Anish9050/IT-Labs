@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Countdown Timer</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            text-align:center;
+            background:#f2f2f2;
+        }
+
+        .container{
+            width:350px;
+            margin:auto;
+            margin-top:80px;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        input, button{
+            padding:10px;
+            margin:10px;
+            width:80%;
+        }
+
+        #display{
+            font-size:30px;
+            font-weight:bold;
+            color:blue;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Countdown Timer</h2>
+
+<input type="number" id="seconds"
+       placeholder="Enter seconds">
+
+<button onclick="startTimer()">Start Timer</button>
+
+<h1 id="display">0</h1>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
