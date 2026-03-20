@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quiz Application</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            text-align:center;
+            background:#f2f2f2;
+        }
+
+        .container{
+            width:450px;
+            margin:auto;
+            margin-top:50px;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        button{
+            padding:10px;
+            margin:5px;
+            width:80%;
+            cursor:pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Quiz Application</h2>
+
+<h3 id="question"></h3>
+
+<div id="options"></div>
+
+<button onclick="nextQuestion()">Next</button>
+
+<h3 id="result"></h3>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
