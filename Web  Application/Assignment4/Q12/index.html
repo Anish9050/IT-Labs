@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Character Limit Checker</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align:center;
+    background:#f2f2f2;
+}
+
+.container{
+    width:400px;
+    margin:auto;
+    margin-top:60px;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+textarea{
+    width:90%;
+    height:120px;
+    padding:10px;
+}
+
+#count{
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Character Limit Checker</h2>
+
+<textarea id="textInput"
+          placeholder="Type here..."
+          maxlength="200"></textarea>
+
+<p>Remaining Characters:
+   <span id="count">200</span>
+</p>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
